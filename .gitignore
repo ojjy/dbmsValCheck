@@ -134,3 +134,4 @@ dbinfo.json
 *.sql
 /venv/
 *.json
+/.idea/
