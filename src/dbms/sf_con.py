@@ -7,9 +7,9 @@ class Snowflakedb(DBMS):
         self.warehouse = warehouse
         self._con = snowflake.connector.connect(user=self.user,
                                                 password=self.pwd,
-                                                account=self.host,
-                                                warehouse=self.warehouse,
-                                                database=self.db)
+                                                account=self.host)
+                                                # warehouse=self.warehouse,
+                                                # database=self.db)
         self._cursor = self._con.cursor()
 
     def __enter__(self):
