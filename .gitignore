@@ -19,6 +19,7 @@ lib64/
 parts/
 sdist/
 var/
+
 wheels/
 pip-wheel-metadata/
 share/python-wheels/
@@ -129,6 +130,7 @@ dmypy.json
 .pyre/
 
 dbinfo.json
+test.json
 
 *.SQL
 *.sql
