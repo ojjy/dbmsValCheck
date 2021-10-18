@@ -47,8 +47,8 @@ class MYSQLdb(DBMS):
         return self._con.close()
 
     @classmethod
-    def validate(self, user, pwd, host, port):
-        with pymysql.connect(user=user, password=pwd, host=host, port=port) as mysqldb:
+    def validate(self, user, pwd, host, port, db):
+        with pymysql.connect(user=user, password=pwd, host=host, port=port, db=db) as mysqldb:
             cur = mysqldb.cursor()
             cur.execute("SELECT VERSION()")
             version = cur.fetchone()
