@@ -2,14 +2,16 @@ import snowflake.connector
 from dbms.dbms_abs import DBMS
 
 class Snowflakedb(DBMS):
-    def __init__(self, warehouse, **kwargs):
+    def __init__(self, wh,schema, **kwargs):
         super().__init__(**kwargs)
-        self.warehouse = warehouse
+        self.wh = wh
+        self.schema = schema
         self._con = snowflake.connector.connect(user=self.user,
                                                 password=self.pwd,
-                                                account=self.host)
-                                                # warehouse=self.warehouse,
-                                                # database=self.db)
+                                                account=self.host,
+                                                schema = self.schema,
+                                                warehouse=self.wh,
+                                                database=self.db)
         self._cursor = self._con.cursor()
 
     def __enter__(self):
