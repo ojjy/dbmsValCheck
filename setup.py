@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="dbmsValCheck",
-    version="0.0.2",
+    version="0.0.3",
     author="Able Analytics LLC",
     author_email="yjjo@able-analytics.com",
     description="The tool for checking validation of a variety of DBMS",

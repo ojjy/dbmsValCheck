@@ -47,7 +47,7 @@ class Postgredb(DBMS):
         return self._con.close()
 
     @classmethod
-    def validate(self, user, pwd, host, port, db):
+    def validate(self, user, pwd, host, port):
         with psycopg2.connect(user=user, password=pwd, host=host, port=port) as postgredb:
             cur = postgredb.cursor()
             cur.execute("SELECT VERSION()")

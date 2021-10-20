@@ -4,7 +4,7 @@ from dbms.dbms_abs import DBMS
 class MSSQLDB(DBMS):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self._con = pymssql.connect(host=kwargs['host'], user=kwargs['user'], password=kwargs['pwd'], port=kwargs['port'], database=kwargs['db'])
+        self._con = pymssql.connect(host=self.host, user=self.user, password=self.pwd, port=kwargs['port'], database=self.db)
         self._cursor = self._con.cursor()
 
     def __enter__(self):

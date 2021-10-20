@@ -1,7 +1,4 @@
 from abc import ABC, abstractmethod
-import json
-from sqlalchemy import create_engine
-import psycopg2
 
 
 class DBMS(ABC):
@@ -10,6 +7,7 @@ class DBMS(ABC):
         self.user = kwargs['user']
         self.pwd = kwargs['pwd']
         self.db = kwargs['db']
+        self.port = None
         self._con = None
         self._cursor = None
 
